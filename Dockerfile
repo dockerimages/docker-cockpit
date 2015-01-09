@@ -1,5 +1,5 @@
 FROM fedora:21
-MAINTAINER "Stef Walter" <stefw@redhat.com>
+MAINTAINER "Frank Lemanschik" <frank@dspeed.eu>
 
 RUN yum -y update && yum clean all
 
@@ -12,6 +12,7 @@ RUN mkdir -p /container
 ADD cockpit-container-bridge /container/cockpit-bridge
 ADD cockpit-container-daemon /container/cockpitd
 ADD cockpit-container-run /container/cockpit-run
+RUN chmod +x /container/*
 
 # Look ma, no EXPOSE
 
