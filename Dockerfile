@@ -5,10 +5,10 @@ RUN yum -y update && yum clean all
 
 # A repo where we can find recent Cockpit builds for F21
 # ADD cockpit-preview.repo /etc/yum.repos.d/
-RUN echo '[cockpit-preview] \n\
- name=COPR repo for cockpit-preview \n\
- baseurl=http://copr-be.cloud.fedoraproject.org/results/sgallagh/cockpit-preview/fedora-$releasever-$basearch/ \n\
- gpgcheck=0 \n\
+RUN echo '[cockpit-preview] \
+ name=COPR repo for cockpit-preview \
+ baseurl=http://copr-be.cloud.fedoraproject.org/results/sgallagh/cockpit-preview/fedora-$releasever-$basearch/ \
+ gpgcheck=0 \
  enabled=0' > /etc/yum.repos.d/cockpit-preview.repo
 RUN yum -y --enablerepo=cockpit-preview install cockpit && yum clean all 
 
