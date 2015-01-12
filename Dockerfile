@@ -19,6 +19,6 @@ ADD cockpit-container-daemon /container/cockpitd
 ADD cockpit-container-run /container/cockpit-run
 RUN chmod +x /container/*
 
-# Look ma, no EXPOSE
+EXPOSE 9090
 
 CMD ["/container/cockpit-run"]
